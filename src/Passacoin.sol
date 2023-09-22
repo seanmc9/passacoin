@@ -1,10 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import "@openzeppelin/token/ERC20/ERC20.sol";
 import "@openzeppelin/utils/Address.sol";
 
-contract Passacoin is ERC20 {
+contract Passacoin {
     event PaymentReleased(address to, uint256 amount);
 
     uint256 public constant STARTING_PRICE = 1000000 gwei;
@@ -12,7 +11,7 @@ contract Passacoin is ERC20 {
     uint256 public timesMinted;
     address public immutable creator;
 
-    constructor(string memory name_, string memory symbol_) ERC20(name_, symbol_) {
+    constructor() {
         creator = msg.sender;
     }
 
