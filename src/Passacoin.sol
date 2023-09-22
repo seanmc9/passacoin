@@ -34,7 +34,7 @@ contract Passacoin {
             emit PaymentReleased(msg.sender, valueRequired - STARTING_PRICE);
 
             Address.sendValue(payable(creator), STARTING_PRICE);
-            Address.sendValue(payable(minters[minters.length - 1]), valueRequired - STARTING_PRICE);
+            Address.sendValue(payable(minters[minters.length - 2]), valueRequired - STARTING_PRICE);
         }
     }
 }
